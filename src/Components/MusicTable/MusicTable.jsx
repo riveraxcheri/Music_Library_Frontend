@@ -1,6 +1,6 @@
 
 
-const MusicTable = (props) => {
+const MusicTable = (songs) => {
     return ( <table>
         <thead>
             <tr>
@@ -12,14 +12,14 @@ const MusicTable = (props) => {
             </tr>
         </thead>
         <tbody>
-            {entries.map((entry, idex) => {
+            {songs.map((song) => {
                 return (
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>song.title</td>
+                        <td>song.album</td>
+                        <td>song.artist</td>
+                        <td>song.genre</td>
+                        <td>song.release_date</td>
                     </tr>
                 )
             })}
