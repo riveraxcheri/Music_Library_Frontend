@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
 
 const AddMusicForm = (props) => {
-    const [songTitle, setSongTitle] = useState("");
-    const [songAlbum, setSongAlbum] = useState("");
-    const [songArtist, setSongArtist] = useState("");
-    const [songGenre, setSongGenre] = useState("");
-    const [songReleaseDate, setSongReleaseDate] = useState("");
+  const [songTitle, setSongTitle] = useState("");
+  const [songAlbum, setSongAlbum] = useState("");
+  const [songArtist, setSongArtist] = useState("");
+  const [songGenre, setSongGenre] = useState("");
+  const [songReleaseDate, setSongReleaseDate] = useState("");
+  // const [isLiked, setIsLiked] = useState(false);
+  //cont likeToggle = () => {setIsLiked(!isLiked);};
 
-    function handleSubmit() {
-        // event.preventDefault();
-        const formValues = {
-            id: props.songs.length +1,
-            title: songTitle,
-            album: songAlbum,
-            artist: songArtist,
-            genre: songGenre,
-            release_date: songReleaseDate,
-            // isLiked: false,
-        };
-        console.log(formValues);
-        props.addNewSongProp(formValues);
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formValues = {
+      title: songTitle,
+      album: songAlbum,
+      artist: songArtist,
+      genre: songGenre,
+      release_date: songReleaseDate,
+      // isLiked: false,
+    };
+    console.log(formValues);
+    props.addNewSongProp(formValues).then(response =>props.getAllSongs())
+    ;
+  }
 
   return (
-    <form onSubmit={handleSubmit()}>
+    <form onSubmit={(event) => handleSubmit(event)}>
       <div>
         <label>Title:</label>
         <input
@@ -60,5 +62,4 @@ const AddMusicForm = (props) => {
     </form>
   );
 };
-}
 export default AddMusicForm;

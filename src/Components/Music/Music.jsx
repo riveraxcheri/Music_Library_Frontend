@@ -1,4 +1,4 @@
-const Music = (song) => {
+const Music = ({song}) => {
     return ( 
         <li>
             <p>{song.title}</p>

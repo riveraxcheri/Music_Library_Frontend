@@ -27,9 +27,10 @@ function App() {
   //POST
   async function addNewSong(newSong){
 
-    const response = await axios.post('http://127.0.0.1:8000/api/music/');
+    const response = await axios.post('http://127.0.0.1:8000/api/music/', newSong);
     if(response.status == 204){
       console.log('Successfully created a new song!');
+      getAllSongs();
     }
   }
 
@@ -37,8 +38,8 @@ function App() {
   return (
     <div>
       <NavBar/>
-      <MusicTable/>
-      <AddMusicForm songs={songs} addNewSongProp={addNewSong}/>
+      <AddMusicForm songs={songs} addNewSongProp={addNewSong} getAllSongs={getAllSongs}/>
+      <MusicTable songs={songs}/>
       <button onClick={() => getAllSongs()}>Get All</button>
     </div>
   );
