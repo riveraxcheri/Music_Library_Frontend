@@ -8,6 +8,19 @@ const MusicTable = ({ songs }) => {
       ))}
     </ul>
     // <table>
+    //     <div>
+    //       <tr>
+    //         <td>
+    //           <ul>
+    //             {songs.map((song) => (
+    //               <Music song={song} key={song.id} />
+    //             ))}
+    //           </ul>
+    //         </td>
+    //       </tr>
+    //     </div>;
+    // </table>
+    // <table>
     //     <thead>
     //         <tr>
     //             <th>Title</th>
@@ -18,8 +31,8 @@ const MusicTable = ({ songs }) => {
     //         </tr>
     //     </thead>
     //     <tbody>
-    //         {/* {songs.map((song) => {
-    //             return ( */}
+    //         {songs.map((song) => {
+    //             return (
     //                 <tr>
     //                     <td>"song.title"</td>
     //                     <td>"song.album"</td>
@@ -28,7 +41,7 @@ const MusicTable = ({ songs }) => {
     //                     <td>"song.release_date"</td>
     //                 </tr>
 
-    //         {/* })} */}
+    //         );};
     //     </tbody>
     // </table>
   );
