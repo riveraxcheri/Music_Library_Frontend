@@ -27,30 +27,41 @@ const AddMusicForm = (props) => {
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <div>
+        <h1>Add Song To Music Library:</h1>
+      </div>
+      <div>
         <label>Title:</label>
         <input
           type="text"
           value={songTitle}
           onChange={(event) => setSongTitle(event.target.value)}
         />
+      </div>
+      <div>
         <label>Album:</label>
         <input
           type="text"
           value={songAlbum}
           onChange={(event) => setSongAlbum(event.target.value)}
         />
+      </div>
+      <div>
         <label>Artist:</label>
         <input
           type="text"
           value={songArtist}
           onChange={(event) => setSongArtist(event.target.value)}
         />
+      </div>
+      <div>
         <label>Genre:</label>
         <input
           type="text"
           value={songGenre}
           onChange={(event) => setSongGenre(event.target.value)}
         />
+      </div>
+      <div>
         <label>Release Date:</label>
         <input
           type="date"

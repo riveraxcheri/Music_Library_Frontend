@@ -1,11 +1,12 @@
 import Music from "../Music/Music";
 
-const MusicTable = ({songs}) => {
-
-    return (
-        <ul>
-    {songs.map(song =><Music song={song} key= {song.id}/>)}
-    </ul> 
+const MusicTable = ({ songs }) => {
+  return (
+    <ul>
+      {songs.map((song) => (
+        <Music song={song} key={song.id} />
+      ))}
+    </ul>
     // <table>
     //     <thead>
     //         <tr>
@@ -26,34 +27,36 @@ const MusicTable = ({songs}) => {
     //                     <td>"song.genre"</td>
     //                     <td>"song.release_date"</td>
     //                 </tr>
-                
+
     //         {/* })} */}
     //     </tbody>
     // </table>
-     );
-}
+  );
+};
 
 //Brainstorming:
 //How can I pull the API data to the table?
-        // Using useEffect with async?
+// Using useEffect with async?
 //useEffect(() => {getSongInfo(); })
 //async function getSongInfo(){const response = await axios.get('')}
-        // Importing list from Music Component?
+// Importing list from Music Component?
 //let songsReversed = [...songs].reverse()
 //return (
-    //<ul>
-    //{songsReversed.map(song => Music song={song} key= {song.id}/>)}
-    //</ul>
+//<ul>
+//{songsReversed.map(song => Music song={song} key= {song.id}/>)}
+//</ul>
 //);
-        //Mapping?
-    //let songTitle = title.map((title) => {
-    //     return `<p> ${song.title}</p>`;
-    // })
+//Mapping?
+//let songTitle = title.map((title) => {
+//     return `<p> ${song.title}</p>`;
+// })
 
 // Like Button:
-{/* <div>
-<button onClick={likeToggle}>Like</button>
-</div> */}
+// {
+//   /* <div>
+// <button onClick={likeToggle}>Like</button>
+// </div> */
+// }
 //Would need to add on to table/music list
 // const [isLiked, setIsLiked] = useState(false);
 //cont likeToggle = () => {setIsLiked(!isLiked);};
