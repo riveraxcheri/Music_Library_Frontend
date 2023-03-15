@@ -17,7 +17,7 @@ const SearchBar = ({songs}) => {
   return (
     <form>
       <input
-        type="text"
+        type="search"
         placeholder="Search Music"
         value={searchSongs}
       />
