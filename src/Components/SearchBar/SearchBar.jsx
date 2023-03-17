@@ -1,27 +1,27 @@
 import { useState } from "react";
 
-const SearchBar = ({songs}) => {
-  const [searchSongs, setSearchSongs] = useState([]);
+const SearchBar = ({userInput, setUserInput}) => {
+  
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearchSongs(e.target.value);
-  };
-  if (searchSongs.length > 0) {
-    songs.filter((song) => {
-        console.log (song.data);
-    //   return song.data.match(searchSongs);
-    });
-  }
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   setSearchSongs(e.target.value);
+  // };
+  // if (searchSongs.length > 0) {
+  //   songs.filter((song) => {
+  //       console.log (song.data);
+  //   //   return song.data.match(searchSongs);
+  //   });
+  // }
 
   return (
     <form>
       <input
         type="search"
         placeholder="Search Music"
-        value={searchSongs}
+        value={userInput}
+        onChange={(e) => setUserInput(e.target.value)}
       />
-      <button onChange={handleChange}>Search</button>
     </form>
   );
 }; 

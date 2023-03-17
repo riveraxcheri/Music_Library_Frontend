@@ -1,9 +1,17 @@
 import Music from "../Music/Music";
 
-const MusicTable = ({ songs }) => {
+const MusicTable = ({ songs, userInput }) => {
   return (
     <ul>
-      {songs.map((song) => (
+      {songs
+      .filter(song => (
+        song.title.includes(userInput) ||
+        song.artist.includes(userInput) ||
+        song.album.includes(userInput) ||
+        song.genre.includes(userInput) ||
+        song.release_date.includes(userInput) 
+        ))
+      .map((song) => (
         <Music song={song} key={song.id} />
       ))}
     </ul>

@@ -12,6 +12,7 @@ function App() {
   // const [songArtist, setSongArtist] = useState("");
   // const [songGenre, setSongGenre] = useState("");
   // const [songReleaseDate, setSongReleaseDate] = useState("");
+  const [userInput, setUserInput] = useState([""]);
   const [songs, setSongs] = useState([]);
   useEffect(() => {
     getAllSongs();
@@ -54,9 +55,10 @@ function App() {
         getAllSongs={getAllSongs}
       />
       <SearchBar
-        songs={songs}
+        userInput={userInput}
+        setUserInput={setUserInput}
       />
-      <MusicTable songs={songs} />
+      <MusicTable songs={songs} userInput={userInput} />
       <button onClick={() => getAllSongs()}>Get All</button>
     </div>
   );
